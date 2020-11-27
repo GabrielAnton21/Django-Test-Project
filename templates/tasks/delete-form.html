@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>To-do-list</title>
 </head>
 <body>
-
+    <h1>TO-DO-LIST</h1>
+    <div class="card">
+        <div class="card-header">
+            Delete Task
+        </div>
+        <div class="card-body">
+            <p class="card-text">Are you sure that you want to delete <span class="">{{ taskname }}</span>?</p>
+            <a href="#" class="btn btn-info">No, go back</a>
+            <a href="#" class="btn btn-danger">Yes, delete</a>
+        </div>
+    </div>
 </body>
 </html>
