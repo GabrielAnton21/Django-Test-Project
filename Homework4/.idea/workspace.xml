@@ -40,10 +40,17 @@
       <workItem from="1606499310634" duration="7000" />
       <workItem from="1606499383987" duration="236000" />
       <workItem from="1606501744466" duration="618000" />
+      <workItem from="1606507983033" duration="498000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606508157719">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080/1920.174.1600.900@0.0.1920.1080" timestamp="1606508157719" />
   </component>
 </project>
