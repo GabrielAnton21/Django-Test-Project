@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Homework4.apps.Homework4Config',
+    'ToDoList',
 ]
 
 MIDDLEWARE = [
