@@ -1,24 +1,46 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import TaskForm
+from .models import Tasks
 
 
 # Create your views here.
-def index(request):
-    return render(request, 'tasks/tasks.html')
+def tasks(request):
+    task = Tasks.objects.all()
+
+    if request.method == 'POST':
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = TaskForm()
+
+    context = {'tasks': task, 'form': form}
+    return render(request, 'tasks/tasks.html', context)
 
 
-def update_task(request):
-    return render(request, 'tasks/update-form.html')
+def update_task(request, id):
+    task = Tasks.objects.get(id=id)
 
+    if request.method == 'POST':
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            form.save()
+            return redirect('tasks')
+    else:
+        form = TaskForm(instance=task)
 
-def delete_task(request):
-    return render(request, 'tasks/delete-form.html')
-
-
-def add_task(request):
-    form = TaskForm()
     context = {'form': form}
-    return render(request, 'tasks/add-form.html', context)
+    return render(request, 'tasks/update-form.html', context)
+
+
+def delete_task(request, id):
+    task = Tasks.objects.get(id=id)
+    if request.method == 'POST':
+        task.delete()
+        return redirect('tasks')
+
+    context = {'tasks': task}
+    return render(request, 'tasks/delete-form.html', context)
 
 
 def complete_task(request):

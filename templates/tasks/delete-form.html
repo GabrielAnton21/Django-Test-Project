@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Delete Tasks</title>
 </head>
 <body>
+    <h1>Delete Tasks</h1>
 
+    <h4>Are you sure you want to delete {{ tasks.task }}</h4>
+    <form action="{% url 'delete' tasks.id %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
 </body>
 </html>

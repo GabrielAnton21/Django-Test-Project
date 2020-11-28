@@ -1,10 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
-</body>
-</html>
+
+
+{% block title %}
+    <title>To-Do-List</title>
+{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Add">
+    </form>
+
+    <h1>Task list</h1>
+
+    <ul>
+    {% for t in tasks %}
+        <li>{{ t.task }}
+            <a href="{% url 'update' t.id%}">Update</a>
+            <a href="{% url 'delete' t.id%}">Delete</a>
+            <a href="{% url 'complete' t.id%}">Complete</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
+
