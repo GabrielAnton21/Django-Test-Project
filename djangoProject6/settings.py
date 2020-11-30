@@ -25,7 +25,7 @@ SECRET_KEY = 'of)*-17qmraf&me*k9$!x5b97f5ud=kd46+x1-pgizhi-y45lg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ToDoList',
-    'bootstrap4',
 ]
 
 MIDDLEWARE = [

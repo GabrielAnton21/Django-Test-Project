@@ -45,7 +45,3 @@ def delete_task(request, id):
 
 def complete_task(request):
     return render(request, 'tasks/complete-form.html')
-
-
-def bootstrap4_index(request):
-    return render(request, 'index.html', {})

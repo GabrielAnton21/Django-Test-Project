@@ -1,27 +1,50 @@
-
-
-
-{% block title %}
-    <title>To-Do-List</title>
-{% endblock %}
-
-{% block body %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Add">
-    </form>
-
-    <h1>Task list</h1>
-
-    <ul>
-    {% for t in tasks %}
-        <li>{{ t.task }}
-            <a href="{% url 'update' t.id%}">Update</a>
-            <a href="{% url 'delete' t.id%}">Delete</a>
-            <a href="{% url 'complete' t.id%}">Complete</a>
-        </li>
-    {% endfor %}
-    </ul>
-{% endblock %}
-
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap-reboot.css' %}">
+    {% block title %}
+        <title>To-Do-List</title>
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1>TO-DO-LIST</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="input-group mb-3">
+                  <input type="text" class="form-control" placeholder="Add tasks" aria-label="Add tasks" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input class="btn btn-primary" type="submit" value="ADD">
+                    </form>
+                  </div>
+                </div>
+            </div>
+        </div>
+        {% for t in tasks %}
+            <div class="row">
+                <div class="col-sm">
+                    {{ t.task }}
+                </div>
+                <div class="col-sm">
+                    <a class="btn btn-success" href="{% url 'complete' t.id%}">Completed</a>
+                    <a class="btn btn-primary" href="{% url 'update' t.id%}">Update</a>
+                    <a class="btn btn-danger" href="{% url 'delete' t.id%}">Delete</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endblock %}
+</body>
