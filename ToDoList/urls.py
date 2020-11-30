@@ -1,8 +1,9 @@
-
+from django.conf.urls import include
 from django.urls import path
 from. import views
 
 urlpatterns = [
+    # url(r'', views.bootstrap4_index, name="index"),
     path('', views.tasks, name="tasks"),
     path('update/<int:id>', views.update_task, name="update"),
     path('delete/<int:id>', views.delete_task, name="delete"),

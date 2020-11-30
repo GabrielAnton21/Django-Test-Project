@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap-grid.css' %}">
-    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap-reboot.css' %}">
+{#    <link rel="stylesheet" href="{% load bootstrap4  %}">#}
+{#    <link rel="stylesheet" href="{% load bootstrap4  %}">#}
+{#    <link rel="stylesheet" href="{% load bootstrap4  %}">#}
     <title>Update Tasks</title>
 </head>
 <body>
@@ -27,11 +27,6 @@
                             {% csrf_token %}
                             {{ form.as_p }}
                             <input class="btn btn-info" type="submit" value="<- Go back">
-                        </form>
-                        <form method="post">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <input class="btn btn-primary" type="submit" value="Update">
                         </form>
                     </div>
                 </div>

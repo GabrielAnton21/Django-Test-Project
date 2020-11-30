@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap-grid.css' %}">
-    <link rel="stylesheet" href="{% bootstrap4 'css/bootstrap-reboot.css' %}">
+{#    <link rel="stylesheet" href="{% load bootstrap4  %}">#}
+{#    <link rel="stylesheet" href="{% load bootstrap4  %}">#}
+{#    <link rel="stylesheet" href="{% load bootstrap4  %}">#}
     {% block title %}
         <title>To-Do-List</title>
     {% endblock %}
@@ -21,9 +21,9 @@
         </div>
         <div class="row">
             <div class="col-sm">
-                <div class="input-group mb-3">
-                  <input type="text" class="form-control" placeholder="Add tasks" aria-label="Add tasks" aria-describedby="basic-addon2">
-                  <div class="input-group-append">
+{#                <div class="input-group mb-3">#}
+{#                  <input type="text" class="form-control" placeholder="Add tasks" aria-label="Add tasks" aria-describedby="basic-addon2">#}
+{#                  <div class="input-group-append">#}
                     <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
