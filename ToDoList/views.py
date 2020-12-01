@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import TaskForm
-from .models import Tasks
+from .models import Tasks, models
 
 
 # Create your views here.
@@ -25,7 +25,6 @@ def update_task(request, id):
         form = TaskForm(request.POST, instance=task)
         if form.is_valid():
             form.save()
-            return redirect('tasks')
     else:
         form = TaskForm(instance=task)
 
@@ -38,10 +37,10 @@ def delete_task(request, id):
     if request.method == 'POST':
         task.delete()
         return redirect('tasks')
-
     context = {'tasks': task}
     return render(request, 'tasks/delete-form.html', context)
 
 
-def complete_task(request):
-    return render(request, 'tasks/complete-form.html')
+def complete_task(request, id):
+
+    return render(request, 'tasks/tasks.html')
