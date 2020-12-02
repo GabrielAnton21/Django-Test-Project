@@ -44,4 +44,5 @@ def delete_task(request, id):
 def complete_task(request, id):
     task = Tasks.objects.get(id=id)
     task.created_at = True
+    return redirect('tasks')
 

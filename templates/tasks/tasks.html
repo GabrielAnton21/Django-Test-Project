@@ -55,7 +55,7 @@
                 <div class="col-sm">
                     <a class="btn btn-danger" href="{% url 'delete' t.id%}" style="float: right">Delete</a>
                     <a class="btn btn-primary" href="{% url 'update' t.id%}" style="float: right">Update</a>
-                    <a class="btn btn-success" id="{{ t.id }}" style= "color: white; float: right";>Completed</a>
+                    <a class="btn btn-success" href="{% url 'complete' t.id%}" id="{{ t.id }}" style= "color: white; float: right";>Completed</a>
                 </div>
 
             <script>
@@ -74,7 +74,7 @@
 
     {% endblock %}
 
-
+{#link: https://gabrielanton.pythonanywhere.com#}
 
 
 </body>
