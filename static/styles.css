@@ -3,7 +3,7 @@ body
     background: #fafafa;
 }
 
-.created-time
+#created-time
 {
     font-size: .7rem;
     color: gray;
