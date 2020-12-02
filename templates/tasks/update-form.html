@@ -15,7 +15,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-sm">
-                <h1 class="display-4">TO-DO-LIST</h1>
+                <h1 class="display-4" style="text-align: center">TO-DO-LIST</h1>
             </div>
         </div>
         <div class="row">
@@ -27,12 +27,12 @@
                     <div class="card-body">
                         <form method="post">
                             {% csrf_token %}
-                            {{ form.task}}
-                            {{ form.completed }}
+                            {{ form.task}} {{ form.completed }}
+                            <br>
+                            <a class="btn btn-primary" href="{% url 'tasks' %}"><- Go Back</a>
                             <input class="btn btn-info" type="submit" value="Update">
                         </form>
-                        <br>
-                            <a class="btn btn-danger" href="{% url 'tasks' %}"><- Go Back</a>
+
                     </div>
                 </div>
             </div>
